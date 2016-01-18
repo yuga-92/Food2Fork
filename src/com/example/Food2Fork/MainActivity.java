@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.GridView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -40,6 +41,11 @@ public class MainActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void addItemToList(Receip receip){
+        GridView gv = (GridView) findViewById(R.id.gridView);
+
     }
 
 }
