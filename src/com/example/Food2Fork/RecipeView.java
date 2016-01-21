@@ -23,8 +23,9 @@ import java.util.Map;
 /**
  * Created by YuGa on 1/18/16.
  */
-//Second activity that used to view detalied info about reeip
+//Second activity that used to view detalied info about recipe
 public class RecipeView extends Activity {
+    static JSONObject recipe;
     String recipeID;
     TextView recipeName;
     TextView authorName;
@@ -32,8 +33,6 @@ public class RecipeView extends Activity {
     ListView lv;
     Api api;
     String apiKey;
-    static JSONObject recipe;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,39 +41,31 @@ public class RecipeView extends Activity {
         lv = (ListView) findViewById(R.id.listView);
         recipe = new JSONObject();
         apiKey = getResources().getString(R.string.api_key);
-         recipeID = getIntent().getStringExtra("recipeF2Fid");
-         recipeName = (TextView) findViewById(R.id.recipe_name);
+        recipeID = getIntent().getStringExtra("recipeF2Fid");
+        recipeName = (TextView) findViewById(R.id.recipe_name);
         authorName = (TextView) findViewById(R.id.author_name);
         rank = (TextView) findViewById(R.id.rank);
-         //recipeName.setText(String.valueOf(recipeID));
-        api.connect(apiKey,recipeID,this);
+        api.connect(apiKey, recipeID, this);
     }
-    void showRecipe() throws JSONException {
-        LinearLayout layout = (LinearLayout) findViewById(R.id.view_recipe_id);
 
+    void showRecipe() throws JSONException {
         recipeName.setText(recipe.getString("title"));
         authorName.setText(recipe.getString("publisher"));
-        rank.setText("Rank: "+recipe.getString("social_rank"));
-        JSONArray ingredients = new JSONArray();
+        rank.setText("Rank: " + recipe.getString("social_rank"));
+        JSONArray ingredients;
         ingredients = recipe.getJSONArray("ingredients");
-        String ingreds [] = new String[ingredients.length()];
-        for (int i = 0; i <ingredients.length() ; i++) {
+        String ingreds[] = new String[ingredients.length()];
+        for (int i = 0; i < ingredients.length(); i++) {
             ingreds[i] = ingredients.getString(i);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1,ingreds);
+                android.R.layout.simple_list_item_1, android.R.id.text1, ingreds);
         lv.setAdapter(adapter);
         ImageView iv = (ImageView) findViewById(R.id.recipe_image);
         new DownloadImageTask(iv)
                 .execute(recipe.getString("image_url"));
-//            String key = iter.next();
-//        for (int i=0;i< ingredients.length();i++){
-//        TextView tv = new TextView(this);
-//            tv.setText();
-//            layout.addView(tv);
-
-
     }
+
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
         String url;
@@ -100,10 +91,6 @@ public class RecipeView extends Activity {
 
         protected void onPostExecute(Bitmap result) {
             bmImage.setImageBitmap(result);
-
-
-
         }
     }
-
 }

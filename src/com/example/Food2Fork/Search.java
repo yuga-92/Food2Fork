@@ -9,7 +9,7 @@ import android.widget.EditText;
 /**
  * Created by YuGa on 1/18/16.
  */
-//Search receip activity
+//Search recipe
 public class Search extends MainActivity{
 
     public MainActivity activity;
@@ -24,9 +24,7 @@ public class Search extends MainActivity{
         LayoutInflater inflater = activity.getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.search_dialog, null);
         dialogBuilder.setView(dialogView);
-
         final EditText edt = (EditText) dialogView.findViewById(R.id.edit1);
-
         dialogBuilder.setTitle("Search");
         dialogBuilder.setMessage("Enter recipe name or ingredients (separate ingredients with commas)");
         dialogBuilder.setPositiveButton("Search", new DialogInterface.OnClickListener() {
@@ -37,16 +35,14 @@ public class Search extends MainActivity{
         });
         dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                //pass
+                //
             }
         });
         AlertDialog b = dialogBuilder.create();
         b.show();
     }
-
     public void searchRecipe(String userInput){
         String userInputparced = userInput.replaceAll(" ", "%20");
-        //String key, String userRequest,String params,MainActivity activity
         api.connect(apiKey,"&q="+userInputparced,"&page="+pageSearchNumber,activity);
     }
 

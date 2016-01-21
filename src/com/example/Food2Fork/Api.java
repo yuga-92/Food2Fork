@@ -22,138 +22,99 @@ import java.io.InputStreamReader;
 /**
  * Created by YuGa on 1/18/16.
  */
-//receive data from server and transfer to JsonParce
-public class Api extends  MainActivity{
-    static String responeData;
+//receive data from server and transfers to JsonParce
+public class Api extends MainActivity {
     static String uri;
     static String getUrl = "http://food2fork.com/api/get?";
-    static String searchUrl ="http://food2fork.com/api/search?";
+    static String searchUrl = "http://food2fork.com/api/search?";
     static int wichActivity;
 
-
-
-    //%20 or + instead of space
-    //Generate links
-    public static String generateGetUri(String key, String recipeId){
-        return uri = getUrl+"key="+key+"&rId="+recipeId;
-    }
-    public static String generateSearchUri(String key, String userRequest,String params){
-        return searchUrl+"key="+key+userRequest+params;
+    public static String generateGetUri(String key, String recipeId) {
+        return uri = getUrl + "key=" + key + "&rId=" + recipeId;
     }
 
+    public static String generateSearchUri(String key, String userRequest, String params) {
+        return searchUrl + "key=" + key + userRequest + params;
+    }
 
-    public static String connect(String key, String userRequest,String params,MainActivity activity){
-        uri = generateSearchUri(key,userRequest,params);
+    public static String connect(String key, String userRequest, String params, MainActivity activity) {
+        uri = generateSearchUri(key, userRequest, params);
         new HttpAsyncTask(activity).execute(uri);
         wichActivity = 1;
         return uri;
 
     }
-    public static void connect(String key, String recipeId, RecipeView activity){
+
+    public static void connect(String key, String recipeId, RecipeView activity) {
         uri = generateGetUri(key, recipeId);
         new HttpAsyncTask(activity).execute(uri);
-        wichActivity =2;
+        wichActivity = 2;
 
     }
 
-    public static void connect(String previousUri, MainActivity activity){
-
-        new HttpAsyncTask(activity).execute(previousUri);
-
-    }
-
-    public static String GET(String url){
-        InputStream inputStream = null;
+    public static String GET(String url) {
+        InputStream inputStream;
         String result = "";
 
         try {
-
-            // create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
-
-            // make GET request to the given URL
             HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
-
-            // receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
-
-            // convert inputstream to string
-            if(inputStream != null) {
+            if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-               // responeData = result;
-            }
-            else
+            } else
                 result = "Did not work!";
 
         } catch (Exception e) {
-           // Log.d("InputStream", e.getLocalizedMessage());
+            Log.d("InputStream", e.getLocalizedMessage());
         }
-
         return result;
     }
 
     private static String convertInputStreamToString(InputStream inputStream) throws IOException {
-        String s;
-        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String line;
         String result = "";
-        while((line = bufferedReader.readLine()) != null)
+        while ((line = bufferedReader.readLine()) != null)
             result += line;
-
         inputStream.close();
-       // MainActivity.pageNumberLabel.setText(result);
         return result;
-
     }
 
     private static class HttpAsyncTask extends AsyncTask<String, Void, String> {
         public MainActivity activity;
         public RecipeView recipeView;
-
-        public HttpAsyncTask(MainActivity a)
-        {
+        public HttpAsyncTask(MainActivity a) {
             this.activity = a;
         }
-        public HttpAsyncTask(RecipeView a)
-        {
+        public HttpAsyncTask(RecipeView a) {
             this.recipeView = a;
+        }
+        @Override
+        protected String doInBackground(String... urls) {
+            return GET(urls[0]);
         }
 
         @Override
-        protected String doInBackground(String... urls) {
-
-            return GET(urls[0]);
-        }
-        // onPostExecute displays the results of the AsyncTask.
-       @Override
         protected void onPostExecute(String result) {
-
-           //MainActivity.pageNumberLabel.setText(result);
-           // Toast.makeText( , "changed to grid view", Toast.LENGTH_SHORT).show();
-          // if ()
-           JsonParce parse = new JsonParce();
-           switch (wichActivity) {
-               case 1:
-                   try {
-                       parse.parseJsonSearchRespone(result);
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
-
-                   activity.addToGridView();
-                   break;
-               case 2:
-                   try {
-                       parse.parseJsonGetRespone(result);
-                       recipeView.showRecipe();
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
-
-           }
-
-
+            JsonParce parse = new JsonParce();
+            switch (wichActivity) {
+                case 1:
+                    try {
+                        parse.parseJsonSearchRespone(result);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    activity.addToGridView();
+                    break;
+                case 2:
+                    try {
+                        parse.parseJsonGetRespone(result);
+                        recipeView.showRecipe();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+            }
         }
     }
-
 }

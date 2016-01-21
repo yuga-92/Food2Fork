@@ -13,22 +13,19 @@ import java.util.*;
 
 public class MainActivity extends Activity {
 
+    public static String apiKey;
     static ArrayList <Recipe> recipes = new ArrayList <Recipe>();
     static GridView gv;
-    boolean ifSearch = false;
     static String sortingMode = "r";
-    String params;
     static int pageNumber=1;
     static int pageSearchNumber =1;
+    static TextView pageNumberLabel;
+    static Api api;
+    boolean ifSearch = false;
     Button prevButton;
     Button nextButton;
-    static TextView pageNumberLabel;
-    public static String apiKey;
-    static String data;
-    static Api api;
     Search search;
     String uri;
-    String newPageNumberUri;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,11 +47,9 @@ public class MainActivity extends Activity {
                 Toast.makeText(getBaseContext(),
                         "Recipe " + (position + 1) +" selected",
                         Toast.LENGTH_SHORT).show();
-               // v.getContext().g
                 Intent inent = new Intent(v.getContext(), RecipeView.class);
                 inent.putExtra("recipeF2Fid", GridViewAdapter.recipe.get(position).getRecipeID());
                 startActivity(inent);
-
             }
         });
         if (pageNumber<1) prevButton.setEnabled(false);
@@ -65,8 +60,7 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        return true;//return true so that the menu pop up is opened
-
+        return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -80,10 +74,8 @@ public class MainActivity extends Activity {
                 gv.setNumColumns(2);
                 gv.setHorizontalSpacing(1);
                 gv.setVerticalSpacing(5);
-               // gv.set
                 return true;
             case R.id.item3:
-               // Toast.makeText(this, "Searching...", Toast.LENGTH_SHORT).show();
                  ifSearch = true;
                 search.onSearchClick();
                 return true;
@@ -91,18 +83,14 @@ public class MainActivity extends Activity {
                 Toast.makeText(this, "Top rated", Toast.LENGTH_SHORT).show();
                 ifSearch = false;
                 sortingMode = "r";
-
                 uri =api.connect(apiKey,"","&page="+pageNumber+"&sort="+sortingMode,this);
                 return true;
             case R.id.item5:
                 Toast.makeText(this, "Trending", Toast.LENGTH_SHORT).show();
                  ifSearch = false;
                 sortingMode = "t";
-
                 uri = api.connect(apiKey,"","&page="+pageNumber+"&sort="+sortingMode,this);
-              // pageNumberLabel.setText(Api.responeData);
-
-
+             //This is just for me to set GridView in right way
 //                <ImageView
 //                android:id="@+id/grid_item_image"
 //                android:layout_width="100px"
@@ -120,31 +108,13 @@ public class MainActivity extends Activity {
 //                android:layout_below="@+id/grid_item_image" android:layout_centerHorizontal="true">
 //                </TextView>
 
-
-//                try {
-//                    parce.parseJsonSearchRespone(Api.responeData);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//                 ad1 = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, recipes);
-//                gv.setAdapter(ad1);
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-
-
     public void addToGridView (){
-       // gv.setAdapter(new GridViewAdapter(this, recipes));
-
-
         gv.invalidateViews();
-
         gv.setAdapter(new GridViewAdapter(gv.getContext(), recipes));
-
-
     }
 
     public void prevButtonClick(View v){
@@ -166,7 +136,5 @@ public class MainActivity extends Activity {
             pageSearchNumber++;
             search.searchRecipe(search.userInput);
         }
-
     }
-
 }

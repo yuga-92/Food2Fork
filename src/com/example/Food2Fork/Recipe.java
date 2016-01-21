@@ -43,80 +43,13 @@ public class Recipe {
         return recipeImageUrl;
     }
 
-    public void setRecipeImageUrl(String recipeImageUrl) {
-        this.recipeImageUrl = recipeImageUrl;
-    }
-
     public String getRecipeID() {
         return recipeID;
-    }
-
-    public void setRecipeID(String recipeID) {
-        this.recipeID = recipeID;
-    }
-
-    public String getRecipeSourceUrl() {
-        return recipeSourceUrl;
-    }
-
-    public void setRecipeSourceUrl(String recipeSourceUrl) {
-        this.recipeSourceUrl = recipeSourceUrl;
-    }
-
-    public String getRecipeF2fUrl() {
-        return recipeF2fUrl;
-    }
-
-    public void setRecipeF2fUrl(String recipeF2fUrl) {
-        this.recipeF2fUrl = recipeF2fUrl;
-    }
-
-    public String getRecipeIngredients() {
-        return recipeIngredients;
-    }
-
-    public void setRecipeIngredients(String recipeIngredients) {
-        this.recipeIngredients = recipeIngredients;
-    }
-
-    public int getRecipeOnPageNumber() {
-        return recipeOnPageNumber;
-    }
-
-    public void setRecipeOnPageNumber(int recipeOnPageNumber) {
-        this.recipeOnPageNumber = recipeOnPageNumber;
-    }
-
-    public String getRecipeF2fSocialRank() {
-        return recipeF2fSocialRank;
-    }
-
-    public void setRecipeF2fSocialRank(String recipeF2fSocialRank) {
-        this.recipeF2fSocialRank = recipeF2fSocialRank;
-    }
-
-    public String getRecipePublisherUrl() {
-        return recipePublisherUrl;
-    }
-
-    public void setRecipePublisherUrl(String recipePublisherUrl) {
-        this.recipePublisherUrl = recipePublisherUrl;
-    }
-
-    public String getRecipePublisherName() {
-        return recipePublisherName;
-    }
-
-    public void setRecipePublisherName(String recipePublisherName) {
-        this.recipePublisherName = recipePublisherName;
     }
 
     public String getRecipeTitle() {
         return recipeTitle;
     }
 
-    public void setRecipeTitle(String recipeTitle) {
-        this.recipeTitle = recipeTitle;
-    }
 }
 
