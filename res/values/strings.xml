@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Food2Fork</string>
+    <string name="api_key">38ca9788aa5feeab3b1a52948af73dc2</string>
+    <string name="r_img">recipe_image</string>
+    <string name="rc_name">Recipe Name</string>
+    <string name="author_name">Author name</string>
+    <string name="ingred_name">ingredients_name</string>
+    <string name="recipe">Recipe</string>
 </resources>

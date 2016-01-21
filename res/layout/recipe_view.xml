@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1"
+              android:id="@+id/view_recipe_id">
+
+        <ImageView
+                android:id="@+id/recipe_image"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:src="@drawable/food" android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/r_img">
+        </ImageView>
+        <TextView
+                android:id="@+id/recipe_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rc_name"
+                android:textSize="50px"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center">
+        </TextView>
+    <TextView
+            android:id="@+id/author_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/author_name"
+            android:textSize="30px">
+    </TextView>
+    <TextView
+            android:id="@+id/rank"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="rank"
+            android:textSize="30px">
+    </TextView>
+    <TextView
+            android:id="@+id/ingredients_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingredients:"
+            android:textSize="40px"
+            android:layout_gravity="center_horizontal">
+    </TextView>
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView" android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
