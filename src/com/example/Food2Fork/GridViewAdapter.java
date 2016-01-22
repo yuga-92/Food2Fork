@@ -1,8 +1,5 @@
 package com.example.Food2Fork;
 
-/**
- * Created by YuGa on 1/19/16.
- */
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

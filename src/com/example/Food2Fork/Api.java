@@ -1,13 +1,7 @@
 package com.example.Food2Fork;
 
-import android.app.Activity;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -105,7 +99,7 @@ public class Api extends MainActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    activity.addToGridView();
+                    activity.addToView();
                     break;
                 case 2:
                     try {

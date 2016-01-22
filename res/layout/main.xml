@@ -4,11 +4,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context=".MainActivity" >
+
     <GridView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:id="@+id/gridView" android:layout_alignParentTop="true" android:layout_alignParentStart="true"
-            android:numColumns="1" android:layout_above="@+id/prevPageButton" android:scrollingCache="true"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridView"
+            android:numColumns="1"
+            android:scrollingCache="true" android:layout_alignParentTop="true" android:layout_above="@+id/pageLabel"/>
+
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,4 +28,5 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/pageLabel" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
