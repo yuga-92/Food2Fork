@@ -7,9 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 
 /**
- * Created by YuGa on 1/18/16.
+ * Search recipe
  */
-//Search recipe
 public class Search extends MainActivity{
 
     public MainActivity activity;

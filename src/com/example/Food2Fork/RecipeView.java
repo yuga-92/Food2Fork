@@ -21,9 +21,9 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * Created by YuGa on 1/18/16.
+ * Second activity that used to view detalied info about recipe
  */
-//Second activity that used to view detalied info about recipe
+
 public class RecipeView extends Activity {
     static JSONObject recipe;
     String recipeID;

@@ -14,9 +14,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by YuGa on 1/18/16.
+ * receive data from server and transfers to JsonParce
  */
-//receive data from server and transfers to JsonParce
+
 public class Api extends MainActivity {
     static String uri;
     static String getUrl = "http://food2fork.com/api/get?";
@@ -57,7 +57,7 @@ public class Api extends MainActivity {
             if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
             } else
-                result = "Did not work!";
+                result = "Didn`t work...";
 
         } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
@@ -91,6 +91,7 @@ public class Api extends MainActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            //Used callback method in asynctask...
             JsonParce parse = new JsonParce();
             switch (wichActivity) {
                 case 1:

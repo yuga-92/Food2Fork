@@ -11,6 +11,11 @@ import android.widget.*;
 
 import java.util.*;
 
+/**
+ * I know that some code not as well as possible, but with some things i have not worked before
+ * and learned it during writing the program code
+ */
+
 public class MainActivity extends Activity {
 
     public static String apiKey;
@@ -36,20 +41,14 @@ public class MainActivity extends Activity {
         prevButton = (Button) findViewById(R.id.prevPageButton);
         nextButton = (Button) findViewById(R.id.nextPageButton);
         pageNumberLabel = (TextView) findViewById(R.id.pageLabel);
-
-
         apiKey = getResources().getString(R.string.api_key); //API key
-//
-//        gv = (GridView) findViewById(R.id.gridView);
         viewType();
         search = new Search(this);
-
         if (pageNumber<1) prevButton.setEnabled(false);
-
-
     }
 
     private void viewType() {
+        //in future i can implement this method to switch between GridView and ListView instead of just change gridview columns
             gv = (GridView) findViewById(R.id.gridView);
             gv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                 public void onItemClick(AdapterView<?> parent, View v,
@@ -62,8 +61,6 @@ public class MainActivity extends Activity {
                     startActivity(inent);
                 }
             });
-
-
         doConnection();
     }
 

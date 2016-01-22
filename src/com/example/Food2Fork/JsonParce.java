@@ -8,6 +8,7 @@ import org.json.JSONObject;
  * Created by YuGa on 1/18/16.
  */
 //Parce received JSON data into array of recipes
+    //there are small data to parce so i implement this just to make it convenient
 public class JsonParce {
     public void parseJsonSearchRespone(String dataString) throws JSONException {
         Recipe recipe;
