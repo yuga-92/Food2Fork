@@ -31,6 +31,7 @@ public class GridViewAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
     //I know that this works slow, but i wanted to implement this task using standart libraries
     // we can use picasso library or etc. to speed up this process
+    //for present time
         View customView = convertView;
         final Recipe recipeItem  = recipe.get(position);
         final ViewHolder holder;
