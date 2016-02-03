@@ -31,7 +31,6 @@ public class GridViewAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
     //I know that this works slow, but i wanted to implement this task using standart libraries
     // we can use picasso library or etc. to speed up this process
-    //for present time
         View customView = convertView;
         final Recipe recipeItem  = recipe.get(position);
         final ViewHolder holder;
@@ -47,7 +46,7 @@ public class GridViewAdapter extends BaseAdapter{
             holder = (ViewHolder) customView.getTag();
         }
     final String url = recipe.get(position).getRecipeImageUrl();
-    if (mImages.get(url) != null) //this is needed to scrolling in gridview not reloads pictures
+    if (mImages.get(url) != null) //this is needed to scrolling in gridview not reload the pictures
         holder.imageView.setImageBitmap(mImages.get(url));
     else {
         new DownloadImageTask(holder.imageView)
