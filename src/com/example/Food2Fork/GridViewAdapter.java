@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -49,9 +50,10 @@ public class GridViewAdapter extends BaseAdapter{
     if (mImages.get(url) != null) //this is needed to scrolling in gridview not reload the pictures
         holder.imageView.setImageBitmap(mImages.get(url));
     else {
-        new DownloadImageTask(holder.imageView)
-                .execute(recipe.get(position).getRecipeImageUrl());
-
+       // new DownloadImageTask(holder.imageView)
+         //       .execute(recipe.get(position).getRecipeImageUrl());
+       // Picasso.with(context).load(item.getImage()).into(holder.imageView);
+        Picasso.with(context).load(url).into(holder.imageView);
     }
         holder.textView.setText(recipeItem.getRecipeTitle());
         return customView;
