@@ -2,18 +2,14 @@ package com.example.Food2Fork;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,8 +26,6 @@ public class GridViewAdapter extends BaseAdapter{
     }
 @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-    //I know that this works slow, but i wanted to implement this task using standart libraries
-    // we can use picasso library or etc. to speed up this process
         View customView = convertView;
         final Recipe recipeItem  = recipe.get(position);
         final ViewHolder holder;
@@ -50,9 +44,6 @@ public class GridViewAdapter extends BaseAdapter{
     if (mImages.get(url) != null) //this is needed to scrolling in gridview not reload the pictures
         holder.imageView.setImageBitmap(mImages.get(url));
     else {
-       // new DownloadImageTask(holder.imageView)
-         //       .execute(recipe.get(position).getRecipeImageUrl());
-       // Picasso.with(context).load(item.getImage()).into(holder.imageView);
         Picasso.with(context).load(url).into(holder.imageView);
     }
         holder.textView.setText(recipeItem.getRecipeTitle());
@@ -81,29 +72,6 @@ public static class ViewHolder {
     TextView textView;
 }
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
-        String url;
-        public DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            url = urldisplay;
-            Bitmap mIcon11 = null;
-            try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return mIcon11;
-        }
 
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-            mImages.put(url, result);
-        }
-    }
+
 }
