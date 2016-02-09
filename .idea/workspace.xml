@@ -17,17 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5fbac3-a775-4aba-86dc-c11e2f409797" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_picasso_picasso_2_5_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Food2Fork/Food2Fork.apk" afterPath="$PROJECT_DIR$/out/production/Food2Fork/Food2Fork.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Food2Fork/Food2Fork.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Food2Fork/Food2Fork.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/Api$HttpAsyncTask.class" afterPath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/Api$HttpAsyncTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/Api.class" afterPath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/Api.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/GridViewAdapter$DownloadImageTask.class" afterPath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/GridViewAdapter$DownloadImageTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/GridViewAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/GridViewAdapter$ViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/GridViewAdapter.class" afterPath="$PROJECT_DIR$/out/production/Food2Fork/com/example/Food2Fork/GridViewAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Food2Fork.iml" afterPath="$PROJECT_DIR$/Food2Fork.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/Food2Fork/GridViewAdapter.java" afterPath="$PROJECT_DIR$/src/com/example/Food2Fork/GridViewAdapter.java" />
     </list>
     <ignored path="Food2Fork.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -293,6 +283,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Food2Fork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Food2Fork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Food2Fork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -695,7 +699,19 @@
       <option name="project" value="LOCAL" />
       <updated>1455029786263</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="GridViewAdapter class edited:&#10;Added picasso library for image downloading">
+      <created>1455033355484</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1455033355485</updated>
+    </task>
+    <task id="LOCAL-00011" summary="GridViewAdapter class edited:&#10;Added picasso library for image downloading">
+      <created>1455033424934</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1455033424934</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -713,9 +729,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50239235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50239235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -749,7 +765,8 @@
     <MESSAGE value="comments with description added" />
     <MESSAGE value="Edited two comments with grammar marks" />
     <MESSAGE value="API class edited:&#10;method GET and AsyncTask class&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="API class edited:&#10;method GET and AsyncTask class&#10;" />
+    <MESSAGE value="GridViewAdapter class edited:&#10;Added picasso library for image downloading" />
+    <option name="LAST_COMMIT_MESSAGE" value="GridViewAdapter class edited:&#10;Added picasso library for image downloading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
